@@ -1,0 +1,10 @@
+export { default as Bg1 } from "./bg1.jpg";
+export { default as Bg2 } from "./bg2.jpg";
+export { default as Bg3 } from "./bg3.jpg";
+export { default as Bg4 } from "./bg4.jpg";
+export { default as Bg5 } from "./bg5.jpg";
+export { default as Bg6 } from "./bg6.jpg";
+export { default as Bg7 } from "./bg7.jpg";
+export { default as Bg8 } from "./bg8.jpg";
+export { default as Bg9 } from "./bg9.jpg";
+export { default as Bg10 } from "./bg10.jpg";
