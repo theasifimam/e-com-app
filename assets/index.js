@@ -8,3 +8,5 @@ export { default as Bg7 } from "./bg7.jpg";
 export { default as Bg8 } from "./bg8.jpg";
 export { default as Bg9 } from "./bg9.jpg";
 export { default as Bg10 } from "./bg10.jpg";
+export { default as profileplaceholder } from "./profileplaceholder.png";
+export { default as user } from "./user.jpg";
