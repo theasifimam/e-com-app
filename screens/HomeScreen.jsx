@@ -15,15 +15,23 @@ import { primaryColor } from "../utils/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_FEEDS } from "../context/actions/feedsAction";
 import { Feeds } from "../components";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
   const [searchKey, setSearchKey] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const { feeds } = useSelector((state) => state.feeds);
+  const [filtered, setFiltered] = useState(null);
+  const nav = useNavigation();
 
   const handleSearch = (text) => {
     setSearchKey(text);
+    setFiltered(
+      feeds.filter(
+        (data) => data.title.includes(text) || data.description.includes(text)
+      )
+    );
   };
 
   useEffect(() => {
@@ -48,8 +56,15 @@ const HomeScreen = () => {
   return (
     <SafeAreaView className="flex-1 justify-start bg-[#EBEAEF] pt-6">
       <View className="w-full flex-row items-center justify-between px-4 py-2">
-        <MaterialIcons name="chevron-left" size={32} color="#555" />
-        <Text className="text-xl">Search Products</Text>
+        <MaterialIcons
+          name="chevron-left"
+          size={32}
+          color="#555"
+          onPress={() => nav.goBack(null)}
+        />
+        <Text className="text-xl" style={{ color: primaryColor }}>
+          Search Products
+        </Text>
         <Image
           source={user}
           className="w-12 h-12 rounded-xl"
@@ -81,7 +96,7 @@ const HomeScreen = () => {
             <ActivityIndicator color={primaryColor} size="large" />
           </View>
         ) : (
-          <Feeds feeds={feeds} />
+          <Feeds feeds={filtered || filtered?.length > 0 ? filtered : feeds} />
         )}
       </ScrollView>
 

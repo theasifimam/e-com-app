@@ -14,7 +14,7 @@ const OnBoardingScreen = () => {
     const checkOnboardingStatus = async () => {
       const value = await AsyncStorage.getItem("@onboarding_complete");
       if (value !== null || value === "true") {
-        nav.replace("Home");
+        nav.replace("Login");
       }
     };
     checkOnboardingStatus();
@@ -24,7 +24,7 @@ const OnBoardingScreen = () => {
     if (e === 2) {
       try {
         await AsyncStorage.setItem("@onboarding_complete", "true");
-        nav.navigate("Home");
+        nav.navigate("Login");
       } catch (error) {
         console.log(
           "Error in saving onboarding status in async storage",
@@ -54,7 +54,7 @@ export function ScreenOne() {
       >
         <Text
           className="text-4xl font-extrabold text-left"
-          style={{ color: "black" }}
+          style={{ color: primaryColor }}
         >
           Welcome
         </Text>
