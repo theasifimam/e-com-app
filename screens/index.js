@@ -4,3 +4,6 @@ export { default as ProductScreen } from "./ProductScreen";
 export { default as Login } from "./Login";
 export { default as SignUp } from "./SignUp";
 export { default as WelcomeScreen } from "./WelcomeScreen";
+export { default as Profile } from "./Profile";
+export { default as CartScreen } from "./CartScreen";
+export { default as CategoryScreen } from "./CategoryScreen";

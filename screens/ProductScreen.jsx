@@ -134,7 +134,7 @@ const ProductScreen = ({ route }) => {
               <Text className="font-extrabold text-xl">{product.title}</Text>
               <Text>Size - 28,30,32</Text>
               <View className="flex-row justify-between items-center mt-3">
-                <Text>{product.price}</Text>
+                <Text className="text-2xl font-extrabold">${product.price}</Text>
                 <View className="w-[50%] flex-row  rounded-full items-center justify-evenly">
                   <TouchableOpacity className="h-8 w-8 flex items-center justify-center">
                     <Text className="h-8 w-8 flex items-center justify-center">

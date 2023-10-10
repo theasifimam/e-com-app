@@ -40,7 +40,7 @@ const FeedDetail = ({ title, image, description, price, id }) => {
   const nav = useNavigation();
 
   const handleClick = () => {
-    nav.navigate("ProductScreen", id);
+    nav.navigate("Product", id);
   };
 
   return (
