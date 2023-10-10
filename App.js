@@ -7,6 +7,7 @@ import {
   OnBoardingScreen,
   ProductScreen,
   SignUp,
+  WelcomeScreen,
 } from "./screens";
 import { Provider } from "react-redux";
 import store from "./context/store";
@@ -19,6 +20,7 @@ const App = () => {
       <Provider store={store}>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="OnBoarding" component={OnBoardingScreen} />
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="Home" component={HomeScreen} />

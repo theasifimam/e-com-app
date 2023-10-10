@@ -33,14 +33,14 @@ const Feeds = ({ feeds }) => {
 
 export default Feeds;
 
-const FeedDetail = ({ title, image, description, price }) => {
+const FeedDetail = ({ title, image, description, price, id }) => {
   const [fav, setFav] = useState(false);
   const screenWidth = Math.round(Dimensions.get("window").width);
   const cardWidth = screenWidth / 2 - 25;
   const nav = useNavigation();
 
   const handleClick = () => {
-    nav.navigate("ProductScreen");
+    nav.navigate("ProductScreen", id);
   };
 
   return (

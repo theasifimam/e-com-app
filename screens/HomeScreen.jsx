@@ -44,7 +44,7 @@ const HomeScreen = () => {
         dispatch(SET_FEEDS(data));
         setInterval(() => {
           setIsLoading(false);
-        }, 2000);
+        }, 500);
       };
       fetchData();
     } catch (error) {
@@ -55,15 +55,18 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView className="flex-1 justify-start bg-[#EBEAEF] pt-6">
-      <View className="w-full flex-row items-center justify-between px-4 py-2">
+      <View className="w-full flex-row items-center justify-between px-4 py-2 -mt-6">
         <MaterialIcons
           name="chevron-left"
           size={32}
           color="#555"
           onPress={() => nav.goBack(null)}
         />
-        <Text className="text-xl" style={{ color: primaryColor }}>
-          Search Products
+        <Text
+          className="text-xl"
+          style={{ color: primaryColor, fontWeight: 900, fontSize: 30 }}
+        >
+          bazaar
         </Text>
         <Image
           source={user}

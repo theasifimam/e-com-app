@@ -4,21 +4,30 @@ import {
   ImageBackground,
   TextInput,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import React from "react";
-import { Bg5 } from "../assets";
+import { Bg9 } from "../assets";
 import { PrimaryBtn } from "../components/UIComponents";
 import { useNavigation } from "@react-navigation/native";
+import { MaterialIcons } from "@expo/vector-icons";
 import { primaryColor } from "../utils/utils";
 
 const Login = () => {
   const nav = useNavigation();
   return (
     <ImageBackground
-      source={Bg5}
+      source={Bg9}
       resizeMode="cover"
-      className="h-full w-full flex justify-end items-center"
+      className="h-full w-full flex justify-end items-center relative"
     >
+      <StatusBar animated={true} barStyle="light-content" />
+      <TouchableOpacity
+        className="w-12 h-12 rounded-full absolute top-6 left-6 bg-white flex items-center justify-center"
+        onPress={() => nav.goBack()}
+      >
+        <MaterialIcons name="chevron-left" size={32} color="#555" />
+      </TouchableOpacity>
       <Text
         className="text-5xl font-extrabold mb-2"
         style={{ color: primaryColor, fontWeight: 900 }}
@@ -32,19 +41,10 @@ const Login = () => {
       <TextInput
         placeholder="Password"
         className="bg-white w-[90%] px-4 py-4 rounded-full"
+        secureTextEntry={true}
       />
       <PrimaryBtn title="Login" onPress={() => nav.navigate("Home")} />
-      <TouchableOpacity
-        className="mb-10 mt-2 bg-white rounded-full p-4 w-[90%]"
-        onPress={() => nav.navigate("SignUp")}
-      >
-        <Text
-          className="text-center text-lg"
-          style={{ color: primaryColor, fontWeight: 500 }}
-        >
-          Sign Up Now
-        </Text>
-      </TouchableOpacity>
+      <View className="mb-6"></View>
     </ImageBackground>
   );
 };

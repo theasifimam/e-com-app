@@ -10,3 +10,6 @@ export { default as Bg9 } from "./bg9.jpg";
 export { default as Bg10 } from "./bg10.jpg";
 export { default as profileplaceholder } from "./profileplaceholder.png";
 export { default as user } from "./user.jpg";
+export { default as Product1 } from "./product1.png";
+export { default as Product2 } from "./product2.png";
+export { default as Product3 } from "./product3.png";
